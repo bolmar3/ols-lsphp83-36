@@ -26,7 +26,7 @@ jobs:
       ols: ${{ steps.v.outputs.ols }}
       image: ${{ steps.v.outputs.image }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - id: v
         # Dockerfile ARG defaults are the single source of truth
         run: |
@@ -52,7 +52,7 @@ jobs:
     env:
       IMAGE: ${{ needs.versions.outputs.image }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Platform slug
         run: echo "PLATFORM_PAIR=${PLATFORM//\//-}" >> "$GITHUB_ENV"
